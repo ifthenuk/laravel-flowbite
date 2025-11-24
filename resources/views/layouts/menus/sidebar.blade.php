@@ -1,8 +1,9 @@
 @php
     $url = request()->url();
     $segments = explode('/', $url);
+    $segment = $segments[3];
     //dd($segments, count($segments));
-    count($segments) == 4 ? $segment = $segments[3] : $segment = $segments[4];
+    //count($segments) == 4 ? $segment = $segments[3] : $segment = $segments[4];
     
 @endphp
 <aside id="sidebar" class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width" aria-label="Sidebar">
@@ -11,7 +12,7 @@
       <div class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
         <ul class="pb-2 space-y-2">
           <li>
-            <form action="#" method="GET" class="lg:hidden">
+            <form action="#" method="GET" class="lg:hidden mb-4">
               <label for="mobile-search" class="sr-only">Search</label>
               <div class="relative">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
