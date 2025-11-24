@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{
     darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
-}" x-bind:class="{ 'dark': darkMode === true }">
+}"
+    x-bind:class="{ 'dark': darkMode === true }">
 
 <head>
     <meta charset="utf-8">
@@ -12,10 +13,18 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=noto-sans:400,500,600&display=swap" rel="stylesheet" />
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.0/dist/flowbite.min.js"></script>
-
+    <script>
+        // Cek localStorage dan OS theme SEBELUM halaman dirender
+        if (localStorage.theme === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -25,12 +34,12 @@
         @include('layouts.menus.sidebar')
 
         <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
-            <main>                
+            <main>
                 {{ $slot }}
             </main>
             @include('layouts.partials.footer')
         </div>
-    </div>    
+    </div>
 
     @stack('scripts')
 </body>
