@@ -1,25 +1,51 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+
     </div>
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
+        <a href="#" class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white">
+            <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+        </a>
+        <!-- Card -->
+        <div class="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800">
+            <div class="w-full p-6 sm:p-8">
+                <h2 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">
+                    Forgot your password?
+                </h2>
+                <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+                    {{ __('Don\'t fret! Just type in your email and we will send you a code to reset your password! ') }}
+                </p>
+                <form class="mt-8 space-y-6" method="POST" action="{{ route('password.email') }}">
+                    @csrf
+                    <div>
+                        <x-input-label for="email" :value="__('Email')" />
+                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                            :value="old('email')" required autofocus />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="remember" aria-describedby="remember" name="remember" type="checkbox"
+                                class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="remember" class="font-medium text-gray-900 dark:text-white">I accept the <a
+                                    href="#" class="text-primary-700 hover:underline dark:text-primary-500">Terms
+                                    and Conditions</a></label>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ __('Email Password Reset Link') }}</button>
+                </form>
+            </div>
         </div>
+    </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
+
 </x-guest-layout>
