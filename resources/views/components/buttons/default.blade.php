@@ -22,7 +22,7 @@
     // ----- VARIANT -----
     $variants = [
         // Filled
-        'primary' => 'text-white bg-primary hover:bg-primary-strong border border-transparent focus:ring-primary-medium',
+        'primary' => 'text-white bg-brand hover:bg-brand-strong border border-transparent focus:ring-brand-medium',
         'secondary' => 'text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-neutral-tertiary',
         'dark' => 'text-white bg-gray-900 hover:bg-gray-800 border border-transparent focus:ring-gray-300',
         'light' => 'text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200',
@@ -33,7 +33,7 @@
         'alternative' => 'text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-gray-300',
 
         // Outline
-        'outline-primary' => 'text-primary bg-transparent border border-primary hover:bg-primary hover:text-white focus:ring-primary-subtle',
+        'outline-primary' => 'text-brand bg-transparent border border-brand hover:bg-brand hover:text-white focus:ring-brand-subtle',
         'outline-secondary' => 'text-body bg-neutral-primary border border-default hover:bg-neutral-secondary-soft hover:text-heading focus:ring-neutral-tertiary',
         'outline-dark' => 'text-gray-900 border border-gray-900 bg-transparent hover:bg-gray-900 hover:text-white focus:ring-gray-300',
         'outline-green' => 'text-green-600 border border-green-600 bg-transparent hover:bg-green-600 hover:text-white focus:ring-green-300',
