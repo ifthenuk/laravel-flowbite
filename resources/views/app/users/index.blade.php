@@ -68,7 +68,9 @@
                                         {{ $user->email_verified_at }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        <x-buttons.edit text="Edit" route="users.edit" id="{{ $user->id }}" />
+                                        <x-buttons.default size="xs" iconLeft="fwb-s-user-edit" variant="yellow" href="{{ route('users.edit', $user->id) }}" id="btn-edit-{{ $user->id }}"  pill>
+                                            {{ __("Edit") }}
+                                        </x-buttons.default>
                                     </td>
                                 </tr>
                             @endforeach
