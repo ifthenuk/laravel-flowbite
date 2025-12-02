@@ -6,13 +6,12 @@
     //count($segments) == 4 ? $segment = $segments[3] : $segment = $segments[4];
 @endphp
 <aside id="sidebar"
-    class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+    class="fixed top-0 left-0 z-40 w-64 h-full pt-10 transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
-    <div
-        class="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-default dark:bg-gray-800 dark:divide-gray-700">
         <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
             <div class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                <ul class="pb-2 space-y-2">
+                <ul class="space-y-2">
                     <li>
                         <form action="#" method="GET" class="lg:hidden mb-4">
                             <label for="mobile-search" class="sr-only">Search</label>
@@ -51,10 +50,11 @@
                                 'routeName' => 'users.index',
                             ],
                         ]">
-                        <x-fwb-s-users class="w-6 h-6 text-gray-800 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                        <x-fwb-s-users
+                            class="w-6 h-6 text-gray-800 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     </x-item-sidebar>
                 </ul>
-                @if(App::environment(['local', 'staging']))
+                @if (App::environment(['local', 'staging']))
                     <div class="pt-2 space-y-2">
                         <a href="https://github.com/themesberg/flowbite-admin-dashboard" target="_blank"
                             class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
