@@ -63,7 +63,7 @@
                         <button type="submit"
                             class="w-full text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Sign
                             in</button>
-                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        <p class="text-sm font-light mt-1 text-gray-500 dark:text-gray-400">
                             Don’t have an account yet? <a href="{{ route('register') }}"
                                 class="font-bold text-brand-600 hover:underline dark:text-brand">Sign up</a>
                         </p>
