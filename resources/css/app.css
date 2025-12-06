@@ -10,6 +10,19 @@
 @source "../../node_modules/flowbite";
 
 @theme {
+   /* main color */
+    --color-primary-50: #E7EDFD;
+    --color-primary-100: #CFDAFC;
+    --color-primary-200: #9FB6F9;
+    --color-primary-300: #6F91F6;
+    --color-primary-400: #3F6CF3;
+    --color-primary-500: #0F47F0;
+    --color-primary-600: #0C39C0;
+    --color-primary-700: #092B90;
+    --color-primary-800: #061D60;
+    --color-primary-900: #030E30;
+
+    --color-secondary: #80B3FF;
    /* main text color */
     --color-body: var(--color-stone-600);
     --color-body-subtle: var(--color-stone-500);
